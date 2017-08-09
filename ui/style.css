@@ -4,8 +4,8 @@ body {
     background-image: url('/ui/madi.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position:1000px 20px;
-    margin-top: 110px;
+    background-position:500px 20px;
+    margin-top: 10px;
 }
 
 .center {
