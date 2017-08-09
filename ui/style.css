@@ -1,8 +1,9 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    background-image: url("/ui/madi.png");
-    background-repeat: repeat-x;
+    background-image: url('https://pbs.twimg.com/profile_images/889518226958188544/8ivQX8hE_bigger.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin-top: 750px;
 }
 
