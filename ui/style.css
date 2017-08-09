@@ -3,7 +3,7 @@ body {
     background-color: lightgrey;
     background-image: url("/ui/madi.png");
     background-repeat: repeat-x;
-    margin-top: 75px;
+    margin-top: 750px;
 }
 
 .center {
@@ -19,6 +19,6 @@ body {
 }
 
 .img-medium {
-    height: 10000px;
+    height: 200px;
 }
 
