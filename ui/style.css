@@ -2,7 +2,6 @@ body {
     font-family: sans-serif;
     background-color: lightgrey;
     background-image: url("/ui/madi.png")
-    background-repeat: repeat-y;
     margin-top: 75px;
 }
 
