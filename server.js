@@ -11,7 +11,8 @@ app.get('/', function (req, res) {
 
 
 var files = {
- `file1`: {
+    
+`file1`: {
     title:`Article One | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
@@ -32,7 +33,8 @@ var files = {
             This is article one written by thanga ananth
         </p>`
 },
- `file2`: {
+
+`file2`: {
     title:`Article Two | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
@@ -43,7 +45,8 @@ var files = {
             This is article two written by thanga ananth
     </p>`
 },
- `file3`: {
+
+`file3`: {
     title:`Article Three | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
