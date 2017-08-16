@@ -5,11 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-
 var files = {
 
 `file1`: {
@@ -96,12 +91,14 @@ function createtemplate(data){
 
 
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
 app.get('/:file1', function (req, res) {
   var fileName = req.params.fileName;    
   res.send(createtemplate(files[fileName]));
 });
-
 
 app.get('/ProfilePage', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ProfilePage.html'));
