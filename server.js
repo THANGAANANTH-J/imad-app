@@ -95,7 +95,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:file1', function (req, res) {
+app.get('/:fileName', function (req, res) {
   var fileName = req.params.fileName;    
   res.send(createtemplate(files[fileName]));
 });
