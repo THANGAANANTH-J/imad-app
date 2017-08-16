@@ -95,13 +95,6 @@ app.get('/:file1', function (req, res) {
   res.send(createtemplate(files[fileName]));
 });
 
-app.get('/file2', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'file2.html'));
-});
-
-app.get('/file3', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'file3.html'));
-});
 
 app.get('/ProfilePage', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ProfilePage.html'));
