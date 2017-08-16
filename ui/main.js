@@ -9,23 +9,28 @@ var element = document.getElementById('main-text');
 
 element.innerHTML = 'New Value';
 
-var img = document.getElementById('madi');
-
+var img1 = document.getElementById('madi');
+var img2 = document.getElementById('thanga');
 var marginLeft = 0;
 
 function moveRight(){
     
     marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft + 'px';
+    img1.style.marginLeft = marginLeft + 'px';
 }
 
-function moveLeft(){
+function moveRight(){
     
-    marginLeft = marginLeft - 10;
-    img.style.marginLeft = marginLeft + 'px';
+    marginLeft = marginLeft + 10;
+    img2.style.marginLeft = marginLeft + 'px';
 }
 
-img.onclick = function(){
+img1.onclick = function(){
     var interval1 = setInterval(moveRight,100);
-    var interval2 = setInterval(moveLeft,100);
+    
+}
+
+img2.onclick = function(){
+    var interval2 = setInterval(moveRight,100);
+    
 }
