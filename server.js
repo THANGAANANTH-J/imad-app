@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var files = {
 
-`file1`: {
+'file1': {
     title:`Article One | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
@@ -30,7 +30,7 @@ var files = {
     </p>`
 },
 
-`file2`: {
+'file2': {
     title:`Article Two | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
@@ -42,7 +42,7 @@ var files = {
     </p>`
 },
 
-`file3`: {
+'file3': {
     title:`Article Three | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
