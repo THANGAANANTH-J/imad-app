@@ -16,22 +16,23 @@ var files = {
     title:`Article One | thanga ananth`,
     links:`<a href="/">HomePage </a> <br/>
             <a href="/ProfilePage">LinktoProfilePage </a>`,
-    content:`<p> 
+    content:
+    `<p> 
         
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-        </p>
-        <p> 
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-        </p>
-        <p> 
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-            This is article one written by thanga ananth
-        </p>`
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+    </p>
+    <p> 
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+    </p>
+    <p> 
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+        This is article one written by thanga ananth
+    </p>`
 },
 
 `file2`: {
@@ -59,6 +60,9 @@ var files = {
     </p>`
 }
 };
+    
+
+
 
 
 function createtemplate(data){
