@@ -11,18 +11,19 @@ element.innerHTML = 'New Value';
 
 var img1 = document.getElementById('madi');
 var img2 = document.getElementById('thanga');
-var marginLeft = 0;
+var marginLeft1 = 0;
+var marginLeft2 = 0;
 
 function moveRight(){
     
-    marginLeft = marginLeft + 10;
-    img1.style.marginLeft = marginLeft + 'px';
+    marginLeft1 = marginLeft1 + 10;
+    img1.style.marginLeft = marginLeft1 + 'px';
 }
 
 function moveRight(){
     
-    marginLeft = marginLeft + 10;
-    img2.style.marginLeft = marginLeft + 'px';
+    marginLeft2 = marginLeft2 + 10;
+    img2.style.marginLeft = marginLeft2 + 'px';
 }
 
 img1.onclick = function fn1(){
