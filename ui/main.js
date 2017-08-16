@@ -21,5 +21,5 @@ button.onclick = function(){
     
     // make the request
     request.open('GET','http://thangamananth.imad.hasura-app.io/counter',true);
-    request.send(NULL);
+    request.send(null);
 };
