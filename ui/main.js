@@ -25,12 +25,12 @@ function moveRight(){
     img2.style.marginLeft = marginLeft + 'px';
 }
 
-img1.onclick = function1(){
+img1.onclick = function fn1(){
     var interval1 = setInterval(moveRight,100);
     
 }
 
-img2.onclick = function2(){
+img2.onclick = function fn2(){
     var interval2 = setInterval(moveRight,100);
     
 }
