@@ -9,8 +9,92 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/file1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'file1.html'));
+
+var files = {
+    
+ `file1`: {
+    title:`Article One | thanga ananth`,
+    links:`<a href="/">HomePage </a> <br/>
+            <a href="/ProfilePage">LinktoProfilePage </a>`,
+    content:`<p> 
+        
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+        </p>
+        <p> 
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+        </p>
+        <p> 
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+            This is article one written by thanga ananth
+        </p>`
+},
+ `file2`: {
+    title:`Article Two | thanga ananth`,
+    links:`<a href="/">HomePage </a> <br/>
+            <a href="/ProfilePage">LinktoProfilePage </a>`,
+    content:
+    `<p> 
+            This is article two written by thanga ananth
+            This is article two written by thanga ananth
+            This is article two written by thanga ananth
+    </p>`
+},
+ `file3`: {
+    title:`Article Three | thanga ananth`,
+    links:`<a href="/">HomePage </a> <br/>
+            <a href="/ProfilePage">LinktoProfilePage </a>`,
+    content:
+    `<p> 
+            This is Article Three written by thanga ananth
+            This is Article Three written by thanga ananth
+            This is Article Three written by thanga ananth
+            This is Article Three written by thanga ananth
+    </p>`
+}
+
+};
+
+
+function createtemplate(data){
+    var title = data.title;
+    var links = data.links;
+    var content = data.content;
+    var htmltemplate=
+    `<html>
+    <head>
+        <title>
+          ${title}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            ${links}
+        </div>
+        <hr />
+        <div class="container">
+            ${content}
+        </div>
+    </body>
+    </html>`
+    ;
+
+    return htmltemplate; 
+
+}
+
+
+
+
+app.get('/:file1', function (req, res) {
+  var fileName = req.params.fileName;    
+  res.send(createtemplate(files[fileName]));
 });
 
 app.get('/file2', function (req, res) {
