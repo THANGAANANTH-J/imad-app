@@ -92,6 +92,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/:fileName', function (req, res) {
+  var fileName = req.params.fileName;    
+  res.send(createtemplate(files[fileName]));
+});
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
@@ -104,11 +109,6 @@ app.get('/counter', function (req, res) {
 
 app.get('/ProfilePage', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ProfilePage.html'));
-});
-
-app.get('/:fileName', function (req, res) {
-  var fileName = req.params.fileName;    
-  res.send(createtemplate(files[fileName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
