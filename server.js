@@ -90,6 +90,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/ProfilePage', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'ProfilePage.html'));
+});
+
 var counter = 0;
 app.get('/counter', function (req, res) {
     counter = counter + 1;
