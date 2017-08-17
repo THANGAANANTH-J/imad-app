@@ -2,7 +2,18 @@
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
-        <script type="text/javascript" src="/ui/main.js">
+        <!--<script type="text/javascript" src="/ui/main.js">
+        </script>-->
+        <script>
+                var button = document.getElementById('counter');
+        
+                var counter = 0;
+        
+                button.onclick = function() {
+                 counter = counter + 1;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+                }
         </script>
     </head>
     <body>
