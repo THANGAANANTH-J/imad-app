@@ -49,6 +49,7 @@
                                 if(request.status === 200){
                                     
                                     var count_value = request.responseText;
+                                    document.write(count_value.toString());
                                     var span = document.getElementById('count');
                                     span.innerHTML = count_value.toString();
                                 }
