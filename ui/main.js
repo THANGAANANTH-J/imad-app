@@ -30,6 +30,7 @@ var nameInput = getElementById('name');
 var name = nameInput.value;
 var submit = getElementById('submit_btn');
 submit.onclick = function(){
+    console.log('entering.....');
     //make a request to the server and render the name
     
     //capture the list of names and render it as a list
@@ -42,4 +43,4 @@ submit.onclick = function(){
     
     var ul = document.getElementById('name_list');
     ul.innerHTML = list;
-}
+};
