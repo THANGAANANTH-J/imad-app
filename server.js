@@ -94,8 +94,6 @@ var counter = 0;
 app.get('/counter', function (req, res) {
     counter = counter + 1;
   res.send(counter.toString());
-  console.log('entering..');
-  console.log(counter.toString());
 }); 
 
 /*app.get('/:fileName', function (req, res) {
