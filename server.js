@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var files = {
+/*var files = {
 
 'file1': {
     title:`Article One | thanga ananth`,
@@ -84,16 +84,12 @@ function createtemplate(data){
 
     return htmltemplate; 
 
-}
+}*/
 
 
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 var counter = 0;
@@ -102,11 +98,14 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 }); 
 
-app.get('/:fileName', function (req, res) {
+/*app.get('/:fileName', function (req, res) {
   var fileName = req.params.fileName;    
   res.send(createtemplate(files[fileName]));
-});
+});*/
 
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
 
 app.get('/ProfilePage', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'ProfilePage.html'));
