@@ -113,8 +113,8 @@ app.get('/articles/:articleName', function (req, res) {
             }
             else{
                 //var fileName = req.params.fileName;  
-                var fileName = result.rows[0];
-                res.send(createtemplate(files[fileName]));
+                var articledata = result.rows[0];
+                res.send(createtemplate(articledata));
             }
         }
     });
