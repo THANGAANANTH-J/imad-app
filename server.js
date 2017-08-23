@@ -130,9 +130,25 @@ app.get('/submit-name',function (req, res) {
   res.send(JSON.stringify(names));
 });
 
-app.get('/:fileName', function (req, res) {
-  var fileName = req.params.fileName;    
-  res.send(createtemplate(files[fileName]));
+app.get('articles/:fileName', function (req, res) {
+    
+    pool.query('SELECT * from test', function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length === 0){
+                res.status(404).send('Articles not found');
+            }
+            else{
+                //var fileName = req.params.fileName;  
+                var fileName = result.rows[0];
+                res.send(createtemplate(files[fileName]));
+            }
+        }
+    });
+    
+  
 });
 
 app.get('/ProfilePage', function (req, res) {
