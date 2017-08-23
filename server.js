@@ -14,57 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var files = {
-
-'file1': {
-    title:`Article One | thanga ananth`,
-    links:`<a href="/">HomePage </a> <br/>
-            <a href="/ProfilePage">LinktoProfilePage </a>`,
-    content:
-    `<p> 
-        
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-    </p>
-    <p> 
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-    </p>
-    <p> 
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-        This is article one written by thanga ananth
-    </p>`
-},
-
-'file2': {
-    title:`Article Two | thanga ananth`,
-    links:`<a href="/">HomePage </a> <br/>
-            <a href="/ProfilePage">LinktoProfilePage </a>`,
-    content:
-    `<p> 
-            This is article two written by thanga ananth
-            This is article two written by thanga ananth
-            This is article two written by thanga ananth
-    </p>`
-},
-
-'file3': {
-    title:`Article Three | thanga ananth`,
-    links:`<a href="/">HomePage </a> <br/>
-            <a href="/ProfilePage">LinktoProfilePage </a>`,
-    content:
-    `<p> 
-            This is Article Three written by thanga ananth
-            This is Article Three written by thanga ananth
-            This is Article Three written by thanga ananth
-            This is Article Three written by thanga ananth
-    </p>`
-}
-};
-    
 
 function createtemplate(data){
     var title = data.title;
