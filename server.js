@@ -101,6 +101,27 @@ app.get('/', function (req, res) {
 
 var pool = new Pool(config);
 
+app.get('/articles/:articleName', function (req, res) {
+    
+    pool.query("SELECT * from article where title = '"+ req.params.articleName + "'", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length === 0){
+                res.status(404).send('Articles not found');
+            }
+            else{
+                //var fileName = req.params.fileName;  
+                var fileName = result.rows[0];
+                res.send(createtemplate(files[fileName]));
+            }
+        }
+    });
+    
+  
+});
+
 app.get('/test-db', function (req, res) {
     
     pool.query('SELECT * from test', function(err, result){
@@ -128,27 +149,6 @@ app.get('/submit-name',function (req, res) {
   var name = req.query.name; 
   names.push(name);
   res.send(JSON.stringify(names));
-});
-
-app.get('/articles/:articleName', function (req, res) {
-    
-    pool.query("SELECT * from article where title = '"+ req.params.articleName + "'", function(err, result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else{
-            if(result.rows.length === 0){
-                res.status(404).send('Articles not found');
-            }
-            else{
-                //var fileName = req.params.fileName;  
-                var fileName = result.rows[0];
-                res.send(createtemplate(files[fileName]));
-            }
-        }
-    });
-    
-  
 });
 
 app.get('/ProfilePage', function (req, res) {
