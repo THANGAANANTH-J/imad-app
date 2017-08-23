@@ -132,7 +132,7 @@ app.get('/submit-name',function (req, res) {
 
 app.get('articles/:fileName', function (req, res) {
     
-    pool.query('SELECT * from ', function(err, result){
+    pool.query('SELECT * from '+ req.params.fileName, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
