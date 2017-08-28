@@ -46,13 +46,13 @@ function createtemplate(data){
 }
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 function hash(secret,salt){
     
     var hashed = crypto.pbkdf2Sync('secret', 'salt', 10000, 512, 'sha512');    
-    return hashed.toString('hex');
+    return ['pbkdf','10000','salt',hashed.toString('hex')].join('$');
 
 }
 
