@@ -58,7 +58,7 @@ function hash(secret,salt){
 
 app.get('/hash/:input',function(req,res){
     
-    var hashedString = hash(input,'salt-to-the-string');
+    var hashedString = hash(req.params.input,'salt-to-the-string');
     res.send(hashedString);
     
 });
