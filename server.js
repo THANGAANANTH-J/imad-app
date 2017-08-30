@@ -54,7 +54,7 @@ app.get('/', function (req, res) {
 function hash(secret,salt){
     
     var hashed = crypto.pbkdf2Sync('secret', 'salt', 10000, 512, 'sha512');    
-    return ['pbkdf','10000','salt',hashed.toString('hex')].join('$');
+    return ['pbkdf','10000',salt,hashed.toString('hex')].join('$');
 
 }
 
