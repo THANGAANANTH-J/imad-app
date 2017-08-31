@@ -99,7 +99,6 @@ app.post('/login', function(req,res){
         else{
             if(result.rows.length === 0){
                 res.status(403).send('username/password is invalid');
-                console.log('username/password is invalid');
             }
             else{
                 //var fileName = req.params.fileName;  
