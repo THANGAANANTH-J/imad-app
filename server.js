@@ -87,11 +87,11 @@ app.post('/create_user', function(req,res){
     
 app.post('/login', function(req,res){
     
-    var username = req.body.username;
-    var password = req.body.password;
+   // var username = req.body.username;
+    //var password = req.body.password;
     
     
-    pool.query('SELECT * FROM "user" WHERE "username"  = thanga', function(err,result){
+    pool.query('SELECT * FROM "user" WHERE "username"  = $1',[req.body.username], function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
@@ -104,7 +104,7 @@ app.post('/login', function(req,res){
                 //var fileName = req.params.fileName;  
                 var dbString = result.rows[0];
                 var salt = dbString.split('$')[2];
-                hashedPassword = hash(password, salt);
+                hashedPassword = hash(req.body.password, salt);
                 if(hashedPassword === dbString){
                     res.send('credentials are correct');
                 }else{
