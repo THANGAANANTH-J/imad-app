@@ -92,8 +92,6 @@ app.post('/login', function(req,res){
     
     
     pool.query('SELECT * FROM "user" WHERE username = $1',[username], function(err,result){
-        console.log(username);
-        console.log(password);
         
         if(err){
             res.status(500).send(err.toString());
