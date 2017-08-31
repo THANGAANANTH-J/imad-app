@@ -100,7 +100,6 @@ submit1.onclick = function(){
     request.setRequestHeader("Content-Type:","applicatio/json");
     request.send(JSON.stringify({username: username, password: password}));
     
-    
-    
+
    
 };
