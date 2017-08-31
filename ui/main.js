@@ -97,7 +97,7 @@ submit1.onclick = function(){
     var password = document.getElementById('password').value;
     // make the request
     request.open('POST','http://thangamananth.imad.hasura-app.io/login',true);
-    request.setRequestHeader("Content-Type","applicatio/json");
+    request.setRequestHeader("Content-Type:","applicatio/json");
     request.send(JSON.stringify({username: username, password: password}));
     
     
