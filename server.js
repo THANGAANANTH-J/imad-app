@@ -67,7 +67,9 @@ app.get('/hash/:input',function(req,res){
     
 });
 
- 
+
+var pool = new Pool(config);
+
 app.post('/create_user', function(req,res){
     
     var username = req.body.username;
@@ -87,7 +89,6 @@ app.post('/create_user', function(req,res){
     
 }); 
 
-var pool = new Pool(config);
 
 app.post('/login', function(req,res){
     
