@@ -90,7 +90,7 @@ app.post('/create_user', function(req,res){
 }); 
 
 
-app.post('/login/:username', function(req,res){
+app.post('/login/:username/:password', function(req,res){
     
    // var username = req.body.username;
     //var password = req.body.password;
@@ -110,7 +110,7 @@ app.post('/login/:username', function(req,res){
                 //var fileName = req.params.fileName;  
                 var dbString = result.rows[0];
                 var salt = dbString.split('$')[2];
-                hashedPassword = hash(req.body.password, salt);
+                hashedPassword = hash(req.params.password, salt);
                 if(hashedPassword === dbString){
                     res.send('credentials are correct');
                 }else{
