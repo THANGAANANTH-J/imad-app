@@ -46,7 +46,7 @@ function createtemplate(data){
 
 }
 
-var pool = new Pool(config);
+
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -67,7 +67,28 @@ app.get('/hash/:input',function(req,res){
     
 });
 
+ 
+app.post('/create_user', function(req,res){
     
+    var username = req.body.username;
+    var password = req.body.password;
+    
+    var salt = crypto.randomBytes(128).toString('hex');
+    var dbString = hash(password, salt).toString('hex');
+    pool.query('INSERT INTO user_pwd (username,password) VALUES ($1,$2)',[username,dbString], function(err,result){
+        
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send('user successfully created  '+ username);
+        }
+    });
+    
+}); 
+
+var pool = new Pool(config);
+
 app.post('/login', function(req,res){
     
    // var username = req.body.username;
@@ -98,26 +119,7 @@ app.post('/login', function(req,res){
         }
     });
     
-    
-}); 
-app.post('/create_user', function(req,res){
-    
-    var username = req.body.username;
-    var password = req.body.password;
-    
-    var salt = crypto.randomBytes(128).toString('hex');
-    var dbString = hash(password, salt).toString('hex');
-    pool.query('INSERT INTO user_pwd (username,password) VALUES ($1,$2)',[username,dbString], function(err,result){
-        
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else{
-            res.send('user successfully created  '+ username);
-        }
-    });
-    
-}); 
+});
 
 
 app.get('/articles/:articleName', function (req, res) {
