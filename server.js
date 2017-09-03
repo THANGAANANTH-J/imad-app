@@ -90,13 +90,13 @@ app.post('/create_user', function(req,res){
 }); 
 
 
-app.post('/login', function(req,res){
+app.post('/login/:username', function(req,res){
     
    // var username = req.body.username;
     //var password = req.body.password;
     
     
-    pool.query('SELECT * from user_pwd WHERE  username  = $1',[req.body.username], function(err,result){
+    pool.query('SELECT * from user_pwd WHERE  username  = $1',[req.params.username], function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
