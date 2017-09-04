@@ -130,7 +130,7 @@ app.post('/login', function(req,res){
 
 app.get('/check_login',function(req,res){
     
-    if(req.session && req.session.auth && req.session.auth.id){
+    if(req.session && req.session.auth && req.session.auth.user_id){
         res.send('you are logged in', + req.session.auth.user_id.toString());
     }else{
         res.send('you are not logged in');
@@ -140,7 +140,7 @@ app.get('/check_login',function(req,res){
 
 app.get('/check_logout',function(req,res){
     delete(req.session.auth);
-    res.send('you are logged out in');
+    res.send('you are logged out');
 });
 
 
