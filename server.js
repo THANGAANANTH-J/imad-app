@@ -110,7 +110,7 @@ app.post('/login', function(req,res){
                 //var fileName = req.params.fileName;  
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
-                hashedPassword = hash(req.body.password, salt);
+                hashedPassword = hash([req.body.password], salt);
                 if(hashedPassword === dbString){
                     res.send('credentials are correct');
                 }else{
