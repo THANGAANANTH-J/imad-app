@@ -96,14 +96,14 @@ app.post('/login', function(req,res){
     //var password = req.body.password;
     
     
-    pool.query("SELECT * from user_pwd WHERE  username  = $1",[req.body.username], function(err,result){
+    pool.query('SELECT * from "user_pwd" WHERE  "username"  = $1',[req.body.username], function(err,result){
         
         if(err){
             res.status(500).send(err.toString());
         }
         else{
             if(result.rows.length === 0){
-                res.send(JSON.stringify(result.rows));
+                //res.send(JSON.stringify(result.rows));
                 res.status(403).send('username/password is invalid... Response length problem');
             } 
             else{
