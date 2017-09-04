@@ -108,7 +108,7 @@ app.post('/login', function(req,res){
             } 
             else{
                 //var fileName = req.params.fileName;  
-                var dbString = result.rows[2];
+                var dbString = result.rows[0][0];
                 var salt = dbString.split('$')[2];
                 hashedPassword = hash(req.body.password, salt);
                 if(hashedPassword === dbString){
