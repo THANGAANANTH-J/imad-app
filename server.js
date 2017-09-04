@@ -133,7 +133,7 @@ app.get('/check_login',function(req,res){
     if(req.session && req.session.auth && req.session.auth.user_id){
         res.send('you are logged in', + req.session.auth.user_id.toString());
     }else{
-        res.send('you are not logged in');
+        res.send('you are not logged in',+ req.session.auth.user_id.toString());
     }
 });
 
