@@ -19,7 +19,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
     secret:'somesecretvalue', 
-    cookie: {maxAge: 1000*60*60*24*30}
+    cookie: {
+        maxAge: 1000*60*60*24*30
+    }
 }));
 
 function createtemplate(data){
@@ -115,7 +117,7 @@ app.post('/login', function(req,res){
                 hashedPassword = hash(password, salt);
                 if(hashedPassword === dbString){
                     
-                    req.session.auth = {userId: result.rows[0].id};
+                          req.session.auth = {userId: result.rows[0].id};
                     res.send('credentials are correct');
                     
                 }else{
