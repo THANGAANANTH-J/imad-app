@@ -101,7 +101,6 @@ app.post('/login', function(req,res){
         }
         else{
             if(result.rows.length === 0){
-                //res.send(JSON.stringify(result.rows));
                 res.status(403).send('username/password is invalid... Response length problem');
             } 
             else{
